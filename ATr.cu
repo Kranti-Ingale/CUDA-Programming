@@ -9,31 +9,31 @@ __global__ void Transpose(unsigned *matrix,unsigned *result ,unsigned size){
     for(unsigned k=0;k<size;k++){
     result[i*size+j]=matrix[j*size+i];
  }
-} // end mult
+} // end Transpose
 
 void initmatrix(unsigned *matrix,unsigned size){
-for(unsigned i=0;i<size;i++){
-    for(unsigned j=0;j<size;j++){
-matrix[i*size+j]=(i*size+j);
-}
-
-}
+        for(unsigned i=0;i<size;i++){
+            for(unsigned j=0;j<size;j++){
+                                        matrix[i*size+j]=(i*size+j);
+                                        }
+                                    }
 }// end of initmatrix
 
 void reset(unsigned *matrix,unsigned size){
-    for(unsigned i=0;i<size;i++){
-    for(unsigned j=0;j<size;j++){
-matrix[i*size+j]=0;
-}}
+     for(unsigned i=0;i<size;i++){
+        for(unsigned j=0;j<size;j++){
+                                    matrix[i*size+j]=0;
+                                    }
+                                }
 }// end of reset
 
 void printMatrix(unsigned *matrix,unsigned size){
     for(unsigned i=0;i<size;i++){
-    for(unsigned j=0;j<size;j++){
-        printf("%8d",matrix[i*size+j]);
+        for(unsigned j=0;j<size;j++){
+                                    printf("%8d",matrix[i*size+j]);
+                                    }
+        printf("\n");
     }
-    printf("\n");
-}
 }
 
 #define N 64
